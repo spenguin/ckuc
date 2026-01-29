@@ -3,7 +3,6 @@
  * Main Menu
  */
 ?>
-<?php //wp_nav_menu( 'Main Menu' ); ?>
 <div class="wrapper">
       <input type="checkbox" id="btn" hidden />
       <label for="btn" class="menu-btn">
@@ -12,6 +11,8 @@
       </label>
       <nav id="sidebar">
         <div class="title">Side Menu</div>
+        <?php wp_nav_menu( ['menu'=>'Main Menu','menu_class'=>'list-items'] ); ?>
+<!-- 
         <ul class="list-items">
           <li>
             <a href="#"><i class="fas fa-home"></i>Home</a>
@@ -36,13 +37,13 @@
           </li>
           <li>
             <a href="#"><i class="fas fa-envelope"></i>Contact us</a>
-          </li>
-          <div class="icons">
+          </li> -->
+          <!-- <div class="icons">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-github"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
-          </div>
-        </ul>
+          </div> -->
+        <!-- </ul> -->
       </nav>
     </div>
