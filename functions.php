@@ -17,12 +17,17 @@ define( 'CORE_PATH', dirname( __FILE__ ). '/' );
 define( 'CORE_INC', CORE_PATH . 'includes/' );
 define( 'CORE_PLUGINS_PATH', plugins_url() );
 define( 'CORE_WIDGET', CORE_INC . 'widgets/' );
-define( 'CORE_SHORTCODE', CORE_INC . 'shortcodes/' );
 define( 'CORE_VENDOR', CORE_PATH . 'vendor/' );
 define( 'CORE_DIST', CORE_URL . '/js/dist/' );
 define( 'CORE_JS', CORE_URL . '/js/' );
 
+define( 'CORE_SHORTCODE', CORE_INC . 'shortcodes/' );
+define( 'CORE_CUSTOMFIELDS', CORE_INC . 'custom-fields/' );
+
+
 require_once CORE_INC . 'blank-slate.php';
+require_once CORE_INC . 'CustomFields.php';
+
 // // require_once CORE_INC . 'enqueue.php';
 // require_once CORE_INC . 'custom-posts.php';
 // require_once CORE_INC . 'shortcodes.php';
