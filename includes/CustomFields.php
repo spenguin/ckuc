@@ -14,6 +14,7 @@ function initialize()
     
     add_action('save_post_product', '\CustomFields\saveProductSubtitle');
     add_action('save_post_product', '\CustomFields\saveProductSpecifications');
+    add_action('save_post_product', '\CustomFields\savePDFLink');    
 }
 
 
@@ -23,5 +24,7 @@ function initialize()
 function adminInit()
 {
     add_meta_box( 'product_subtitle_meta', 'Subtitle:', '\CustomFields\productSubtitle', 'product', 'normal', 'high' );
-    add_meta_box( 'product_specifications_meta', 'Specifications:', '\CustomFields\productSpecifications', 'product', 'normal' );
+    add_meta_box( 'product_specifications_meta', 'Specifications:', '\CustomFields\productSpecifications', 'product', 'normal', 'high' );
+    add_meta_box( 'product_PDFLink_meta', 'PDF Link:', '\CustomFields\PDFLink', 'product', 'normal', 'high' );
+
 }

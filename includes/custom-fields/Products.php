@@ -23,7 +23,6 @@ function saveProductSubtitle()
 
     $subtitle   = wp_kses( $_POST['subtitle'] );
     update_post_meta($post->ID, 'subtitle', $subtitle);
-
 }
 
 function productSpecifications()
@@ -33,27 +32,30 @@ function productSpecifications()
     $pageCount  = get_post_meta($post->ID, 'pageCount', TRUE );
     $pageColour = get_post_meta($post->ID, 'pageColour', TRUE );
     $dimensions = get_post_meta($post->ID, 'dimensions' );
-    if( count($dimensions) == 0 ) $dimensions = [NULL,NULL];
+    $dimensions = $dimensions ? $dimensions : [NULL,NULL];
+    $dimensionsSystem   = get_post_meta($post->ID, 'dimensionsSystem', TRUE);
     $weight     = get_post_meta($post->ID, 'weight', TRUE );
     $weightSystem   = get_post_meta($post->ID, 'weightSystem', TRUE );
     $binding    = get_post_meta($post->ID, 'binding', TRUE );
     ?>
 
     <label for="pageCount">Page Count:</label>
-    <input type="number" name="pageCount" value="<?php echo $pageCount; ?>" /><br>
+    <input type="number" name="pageCount" value="<?php echo $pageCount; ?>" size="1"/><br><br>
 
     <label for="pageColour">Page Colour:</label><br>
     <input type="radio" name="pageColour" value="0" <?php echo $pageColour == 0 ? 'checked="checked"' : ''; ?> >Black & White<br>    
     <input type="radio" name="pageColour" value="1" <?php echo $pageColour == 1 ? 'checked="checked"' : ''; ?>>Colour<br>    
-    <input type="radio" name="pageColour" value="2" <?php echo $pageColour == 2 ? 'checked="checked"' : ''; ?>>Black & White/Colour<br>   
+    <input type="radio" name="pageColour" value="2" <?php echo $pageColour == 2 ? 'checked="checked"' : ''; ?>>Black & White/Colour<br><br>   
 
     <label>Dimensions:</label><br>
-    <label for="width">Width:</label><input type="text" name="dimensions[]" value="<?php echo $dimensions[0]; ?>" /><br>
-    <label for="width">Height:</label><input type="text" name="dimensions[]" value="<?php echo $dimensions[1]; ?>" /><br>
+    <label for="dimensions">Width:</label><input type="text" name="dimensions[]" value="<?php echo $dimensions[0]; ?>" size="1" />
+    <label for="dimensions">Height:</label><input type="text" name="dimensions[]" value="<?php echo $dimensions[1]; ?>" size="1" />
+    <input type="radio" name="dimensionsSystem" value=0 <?php echo $dimensionsSystem == 0 ? 'checked="checked"' : ''; ?> />in<input type="radio" name="dimensionsSystem" value=1 <?php echo $dimensionsSystem == 1 ? 'checked="checked"' : ''; ?> />cm<br><br>
 
-    <label for="weight">Page Count:</label>
-    <input type="number" name="weight" value="<?php echo $weight; ?>" />
-    <label for="weightSystem">Weight System:</label><input type="radio" name="weightSystem" value=0 <?php echo $weightSystem == 0 ? 'checked="checked"' : ''; ?> />lbs<input type="radio" name="weightSystem" value=1 <?php echo $weightSystem == 1 ? 'checked="checked"' : ''; ?> />kgs<br>
+
+    <label for="weight">Weight:</label>
+    <input type="number" name="weight" value="<?php echo $weight; ?>" size="1"/>
+    <input type="radio" name="weightSystem" value=0 <?php echo $weightSystem == 0 ? 'checked="checked"' : ''; ?> />lbs<input type="radio" name="weightSystem" value=1 <?php echo $weightSystem == 1 ? 'checked="checked"' : ''; ?> />kgs<br><br>
 
     <label for="binding">Binding:</label>
     <input type="text" name="binding" value="<?php echo $binding; ?>" /><br>
@@ -63,5 +65,53 @@ function productSpecifications()
 
 function saveProductSpecifications()
 {
+    global $post;
 
+    if( empty($post->ID) ) return;
+
+    $pageCount   = wp_kses( $_POST['pageCount'] );
+    update_post_meta($post->ID, 'pageCount', $pageCount);
+
+    $pageColour   = wp_kses( $_POST['pageColour'] );
+    update_post_meta($post->ID, 'pageColour', $pageColour); 
+    
+    $dimensions   = wp_kses( $_POST['dimensions'] );
+    update_post_meta($post->ID, 'dimensions', $dimensions);   
+    
+    $dimensionsSystem   = wp_kses( $_POST['dimensionsSystem'] );
+    update_post_meta($post->ID, 'dimensionsSystem', $dimensionsSystem);  
+    
+    $weight   = wp_kses( $_POST['weight'] );
+    update_post_meta($post->ID, 'weight', $weight); 
+    
+    $weightSystem   = wp_kses( $_POST['weightSystem'] );
+    update_post_meta($post->ID, 'weightSystem', $weightSystem);    
+
+    $binding   = wp_kses( $_POST['binding'] );
+    update_post_meta($post->ID, 'binding', $binding);    
 }
+
+
+function PDFLink()
+{
+    global $post;
+
+    $PDFLink   = get_post_meta($post->ID, 'PDFLink', TRUE);
+
+    ?>
+    <label for="PDFLink">PDF Link:</label>
+    <input type="text" name="PDFLink" value="<?php echo $PDFLink; ?>" size="40" /> (Note: Link will be masked)
+
+    <?php    
+}
+
+function savePDFLink()
+{
+    global $post;
+
+    if( empty($post->ID) ) return;
+
+    $PDFLink   = wp_kses( $_POST['PDFLink'] );
+    update_post_meta($post->ID, 'PDFLink', $PDFLink);
+}
+
