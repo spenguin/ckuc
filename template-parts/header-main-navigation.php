@@ -5,7 +5,7 @@
 ?>
 <div class="header__main-navigation max-wrapper">
     <div class="header__main-navigation--menu">
-        Menu
+        <?php get_template_part( 'template-parts/main-menu' ); ?>
     </div>
     <div class="header__main-navigation--logo">
         <img src="<?php echo CORE_TEMPLATE_URL; ?>/assets/furniture/ckulogo.png" alt="Cool Kids Upstairs Collective" />
