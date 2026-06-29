@@ -25,7 +25,8 @@
             <header id="header" role="banner">
                 <?php get_template_part( 'template-parts/header-top-bar' ); ?>
                 <?php get_template_part( 'template-parts/header-main-navigation' ); ?>
-                <!-- <?php get_template_part( 'template-parts/header-filters' ); ?> -->
+                <!-- <?php //get_template_part( 'template-parts/header-filters' ); ?> -->
             </header>
             <div id="container" class="container">
-                <!-- <main id="content" role="main"> -->
+                <main id="content" role="main">
+                    <div class="site-main-wrapper max-wrapper">
