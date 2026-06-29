@@ -1,0 +1,25 @@
+/** Product listing styles */
+
+.products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left:5%;
+    padding-right: 5%;
+    &__item {
+        width: 48%;
+        max-width: 170px;
+        img {
+            width: 100%;
+        }
+        p {
+            margin-bottom: 0;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+
+}

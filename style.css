@@ -1390,6 +1390,30 @@ http://shouldiprefix.com/#filters
   font-weight: 700;
 }
 
+/** Product listing styles */
+.products {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.products__item {
+  width: 48%;
+  max-width: 170px;
+}
+.products__item img {
+  width: 100%;
+}
+.products__item p {
+  margin-bottom: 0;
+}
+.products__item a {
+  text-decoration: none;
+  color: black;
+}
+
 /** Elements aggregator */
 /** Heading Styles */
 h1, h2, h3, h4, h5, h6 {
