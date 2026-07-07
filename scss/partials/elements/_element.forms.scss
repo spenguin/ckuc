@@ -1,0 +1,16 @@
+/** Forms Styles */
+
+form {
+    padding-left: 2%;
+    padding-right: 2%;
+    div {
+        margin-bottom: 0.5rem;
+        label {
+            display: block;
+        }
+        input[type=text],
+        input[type=email] {
+            width: 100%;
+        }
+    }
+}

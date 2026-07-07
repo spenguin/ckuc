@@ -3,6 +3,7 @@
 namespace Shortcodes;
 
 require_once CORE_SHORTCODE . 'products_listing.php';
+require_once CORE_SHORTCODE . 'publisherApplication.php';
 
 
 

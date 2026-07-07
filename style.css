@@ -1435,4 +1435,28 @@ h4 {
   color: black;
 }
 
+/** Buttons styles */
+.btn {
+  border: 1px solid #BF3434 !important;
+  background-color: #fff !important;
+  color: #000000 !important;
+  margin-top: 0.5rem;
+}
+
+/** Forms Styles */
+form {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+form div {
+  margin-bottom: 0.5rem;
+}
+form div label {
+  display: block;
+}
+form div input[type=text],
+form div input[type=email] {
+  width: 100%;
+}
+
 /*# sourceMappingURL=style.css.map */
