@@ -29,6 +29,7 @@ require_once CORE_INC . 'blank-slate.php';
 require_once CORE_INC . 'CustomFields.php';
 require_once CORE_INC . 'Shortcodes.php';
 require_once CORE_INC . 'LoginRedirects.php';
+require_once CORE_INC . 'UserRoles.php';
 
 
 // // require_once CORE_INC . 'enqueue.php';
