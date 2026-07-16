@@ -22,7 +22,7 @@ function publisherApplication( $atts = [], $content = null, $tag = '' )
                 'user_pass'     => wp_generate_password( 12, TRUE, FALSE ),
                 'user_email'    => $email,
                 'user_url'      => $_POST['shop'],
-                'role'          => 'author',
+                'role'          => 'publisher',
                 'display_name'  => $_POST['user_name']
             ];
 

@@ -17,8 +17,8 @@ function custom_role_login_redirect( $redirect_to, $request, $user )
         } 
         
         // 2. Redirect Editors to a specific management page
-        elseif ( in_array( 'editor', $user->roles ) ) {
-            return home_url( '/editor-dashboard/' );
+        elseif ( in_array( 'publisher', $user->roles ) ) {
+            return home_url( '/publisher-dashboard/' );
         } 
         
         // 3. Redirect Subscribers or Customers to their profile/portal
